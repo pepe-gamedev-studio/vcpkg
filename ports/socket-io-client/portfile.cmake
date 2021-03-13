@@ -3,10 +3,10 @@ vcpkg_check_linkage(ONLY_STATIC_LIBRARY)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO socketio/socket.io-client-cpp
-    REF 1.6.1
-    SHA512 01c9c172e58a16b25af07c6bde593507792726aca28a9b202ed9531d51cd7e77c7e7d536102e50265d66de96e9708616075902dfdcfc72983758755381bad707
+    REF 36a8cd45272aa51f0f6ef27aa4744dbc6e8421f7
+    SHA512 d27298b9ab05f961f4b45775b419e37d438de5f0e5441552231bf837cdfe9932a5ddb991bb05d01ba6e983f7d0058c57c3d60e9e62c9361d4cbb4411a90bc9c6
     HEAD_REF master
-    PATCHES fix-install.patch
+    PATCHES fix.patch
 )
 
 vcpkg_configure_cmake(

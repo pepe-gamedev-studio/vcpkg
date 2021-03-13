@@ -1,0 +1,28 @@
+﻿diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f0bd695..bc76fbc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,6 +54,23 @@ set_target_properties(sioclient
+ endif()
+ list(APPEND TARGET_LIBRARIES sioclient)
+ 
++
++find_package(asio REQUIRED) 
++if (asio_FOUND)
++    include_directories(${asio_INCLUDE_DIRS}) 
++endif()
++
++find_package(RapidJSON REQUIRED)
++if (RapidJSON_FOUND)
++    include_directories(${RapidJSON_INCLUDE_DIRS}) 
++endif()
++
++find_package(websocketpp REQUIRED)
++if (websocketpp_FOUND)
++    include_directories(${websocketpp_INCLUDE_DIRS}) 
++endif()
++
++
+ find_package(OpenSSL)
+ if(OPENSSL_FOUND)
+ add_library(sioclient_tls ${ALL_SRC})
